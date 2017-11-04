@@ -11,6 +11,10 @@ import { UserLoginPage } from '../pages/user-login/user-login';
 import { ManicureLoginPage } from '../pages/manicure-login/manicure-login';
 import { SinupUserPage } from '../pages/sinup-user/sinup-user';
 import { SinupManicurePage } from '../pages/sinup-manicure/sinup-manicure';
+import { UserMainPage } from '../pages/user-main/user-main';
+//import { TabUserManicurePage } from '../tab-user-manicure/tab-user-manicure';
+// import { TabUserHistoricPage } from '../tab-user-historic/tab-user-historic';
+// import { TabUserChatPage } from '../tab-user-chat/tab-user-chat';
 
 
 @Component({
@@ -20,7 +24,7 @@ import { SinupManicurePage } from '../pages/sinup-manicure/sinup-manicure';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SinupManicurePage;
+  rootPage: any = UserMainPage;
 
   pages: Array<{title: string, component: any}>;
 

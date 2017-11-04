@@ -10,7 +10,10 @@ import { UserLoginPage } from '../pages/user-login/user-login';
 import { ManicureLoginPage } from '../pages/manicure-login/manicure-login';
 import { SinupUserPage } from '../pages/sinup-user/sinup-user';
 import { SinupManicurePage } from '../pages/sinup-manicure/sinup-manicure';
-
+import { UserMainPage } from '../pages/user-main/user-main';
+// import { TabUserManicurePage } from '../tab-user-manicure/tab-user-manicure';
+// import { TabUserHistoricPage } from '../tab-user-historic/tab-user-historic';
+// import { TabUserChatPage } from '../tab-user-chat/tab-user-chat';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,12 +27,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     UserLoginPage,
     ManicureLoginPage,
     SinupUserPage,
-    SinupManicurePage
+    SinupManicurePage,
+    UserMainPage,
+   // TabUserManicurePage,
+    // TabUserChatPage,
+    // TabUserHistoricPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
+  //importar as aradinhas aqui também
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -38,7 +46,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     UserLoginPage,
     ManicureLoginPage,
     SinupUserPage,
-    SinupManicurePage
+    SinupManicurePage,
+    UserMainPage,
+    //TabUserManicurePage,
+    // TabUserChatPage,
+    // TabUserHistoricPage
   ],
   providers: [
     StatusBar,
