@@ -1,0 +1,90 @@
+<!--
+  Generated template for the ManicureMainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="pinkao">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Manicure</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<div class="menu_color">
+    <ion-segment [(ngModel)]="options">
+      <ion-segment-button value="Perfil">
+        <font color="white">Perfil</font>
+      </ion-segment-button>
+      <ion-segment-button value="Agenda">
+        <font color="white">Agenda</font>
+      </ion-segment-button>
+      <ion-segment-button value="Chat">
+        <font color="white">Chat</font>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<div [ngSwitch]="options" class="margin_top_more">
+	<ion-list *ngSwitchCase="'Perfil'">
+		<ion-item position="relative" class="margin_top_small">
+		  <ion-avatar item-start>
+		    <img src="../../assets/imgs/taylor_swift.jpg">
+		  </ion-avatar>
+		  <h1> <b> Taylor Swift </b> </h1>
+		</ion-item>
+
+		<ion-list>
+	  		<ion-item>
+	    		<ion-icon name="md-build" item-start item-right></ion-icon>
+	      		<b>Idade</b>
+	      		<p> 25 </p>
+	  		</ion-item>
+
+	  		<ion-item>
+	    		<ion-icon name="md-build" item-start item-right></ion-icon>
+	      		<b>Rua e Número</b>
+	      		<p> Rua lalalala, 333 </p>
+	  		</ion-item>
+
+	  		<ion-item>
+	    		<ion-icon name="md-build" item-start item-right></ion-icon>
+	      		<b>Bairro</b>
+	      		<p> Jardim Florido </p>
+	  		</ion-item>
+
+			<ion-item>
+	    		<ion-icon name="md-build" item-start item-right></ion-icon>
+	      		<b>Cidade</b>
+	      		<p> Campo Mourão </p>
+	  		</ion-item>
+
+	  		<ion-item>
+	    		<ion-icon name="md-build" item-start item-right></ion-icon>
+	      		<b>Telefone</b>
+	      		<p> (44)9 9898-9797 </p>
+	  		</ion-item>
+
+	  		<h5 class="margin_top_small margin_bottom" color="dark"> <b> Tipo de tendimento: </b> </h5>
+
+	    	<ion-item class="input_color margin_bottom">
+	      		<ion-label color="dark">Em casa </ion-label>
+	      		<ion-radio value="casa"></ion-radio>
+	    	</ion-item>
+
+	    	<ion-item class="input_color margin_bottom">
+	        	<ion-label color="dark">Casa do Cliente</ion-label>
+	        	<ion-radio value="casa"></ion-radio>
+	      	</ion-item>
+		</ion-list>
+	</ion-list>
+
+	<ion-list *ngSwitchCase="'Agenda'">
+	</ion-list>
+
+	<ion-list *ngSwitchCase="'Chat'">
+	</ion-list>
+</div>

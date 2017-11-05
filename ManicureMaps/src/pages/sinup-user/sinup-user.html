@@ -5,42 +5,41 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar color="pink">
-    <ion-title>Cadastrar Usuário</ion-title>
+  <ion-navbar color="pinkao">
+    <ion-title class="align">
+      Cadastrar Usuário
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding class="background_image">
-
   <ion-list>
-
-    <ion-item class="margin_top input_color">
-      <ion-label floating color="dark">Usuário:</ion-label>
+    <ion-item class="margin_top_small_small input_color margin_bottom">
+      <ion-label floating color="dark">Digite seu Nome</ion-label>
       <ion-input [(ngModel)]="username" type="text" value=""></ion-input>
     </ion-item>
 
-    <ion-item class="input_color">
-      <ion-label floating color="dark">Email:</ion-label>
+    <ion-item class="input_color margin_bottom">
+      <ion-label floating color="dark">Digite seu Email</ion-label>
       <ion-input [(ngModel)]="email" type="text" value=""></ion-input>
     </ion-item>
 
-    <ion-item class="input_color">
-      <ion-label floating color="dark">Senha:</ion-label>
+    <ion-item class="input_color margin_bottom">
+      <ion-label floating color="dark">Digite sua Senha</ion-label>
       <ion-input [(ngModel)]="password" type="password" value=""></ion-input>
     </ion-item>
 
-    <ion-item class="input_color">
-      <ion-label floating color="dark">Confirme sua senha:</ion-label>
+    <ion-item class="input_color margin_bottom">
+      <ion-label floating color="dark">Confirme sua Senha</ion-label>
       <ion-input [(ngModel)]="password2" type="password" value=""></ion-input>
     </ion-item>
-
   </ion-list>
 
-  <div class="margin_top_huge">
-      <button class="button_color" ion-button full>Criar Cadastro!</button>
+  <div class="margin_top_small">
+      <button class="button_color height_button" ion-button full>Criar Cadastro</button>
   </div>
 
+  <button ion-button icon-center round class="button_color margin_top_huge">
+    <ion-icon name="home" class="size" ></ion-icon>
+  </button>
 </ion-content>

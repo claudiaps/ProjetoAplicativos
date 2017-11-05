@@ -5,37 +5,37 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+  <ion-navbar class="menu_color">
+    <ion-title class="align">
+      Usuário
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-      <ion-navbar color="pink">
-        <ion-title>Usuário</ion-title>
-      </ion-navbar>
+<ion-content class="background_image" padding>
+  <ion-list>
+    <ion-item class="margin_top input_color margin_bottom">
+      <ion-label floating color="dark">Digite seu email</ion-label>
+      <ion-input [(ngModel)]="username" type="text" value=""></ion-input>
+    </ion-item>
 
-    </ion-header>
+    <ion-item class="input_color">
+      <ion-label floating color="dark">Digite sua senha</ion-label>
+      <ion-input [(ngModel)]="password" type="password" value=""></ion-input>
+    </ion-item>
+  </ion-list>
 
+  <div class="margin_top_small">
+    <button class="button_color height_button margin_bottom_bottom" ion-button full>Entrar</button>
+    <button class="button_color height_button" ion-button full>Cadastrar</button>
+  </div>
 
-    <ion-content class="background_image" padding>
+  <button ion-button icon-center round class="button_color margin_top_huge">
+    <ion-icon name="home" class="size" ></ion-icon>
+  </button>
 
-      <ion-list>
-        <ion-item class="margin_top input_color">
-          <ion-label floating color="dark">Usuário:</ion-label>
-          <ion-input [(ngModel)]="username" type="text" value=""></ion-input>
-        </ion-item>
+  <!-- <div padding>
+              <button primary block  (click)="login()">Sign In</button>
+            </div> -->
 
-        <ion-item class="input_color">
-          <ion-label floating color="dark">Senha:</ion-label>
-          <ion-input [(ngModel)]="password" type="password" value=""></ion-input>
-        </ion-item>
-
-      </ion-list>
-
-      <div class="margin_top_huge">
-        <button class="button_color" ion-button full>Entrar!</button>
-        <button class="button_color" ion-button full>Cadastrar!</button>
-
-      </div>
-
-      <!-- <div padding>
-                  <button primary block  (click)="login()">Sign In</button>
-                </div> -->
-
-    </ion-content>
+</ion-content>

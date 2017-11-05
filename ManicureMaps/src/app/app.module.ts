@@ -11,12 +11,14 @@ import { ManicureLoginPage } from '../pages/manicure-login/manicure-login';
 import { SinupUserPage } from '../pages/sinup-user/sinup-user';
 import { SinupManicurePage } from '../pages/sinup-manicure/sinup-manicure';
 import { UserMainPage } from '../pages/user-main/user-main';
+import { ManicureMainPage } from '../pages/manicure-main/manicure-main';
 // import { TabUserManicurePage } from '../tab-user-manicure/tab-user-manicure';
 // import { TabUserHistoricPage } from '../tab-user-historic/tab-user-historic';
 // import { TabUserChatPage } from '../tab-user-chat/tab-user-chat';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MenuController } from 'ionic-angular';
 
 //Pra impotar as paradinhas tem que importar aqui no declarations
 @NgModule({
@@ -29,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SinupUserPage,
     SinupManicurePage,
     UserMainPage,
+    ManicureMainPage,
    // TabUserManicurePage,
     // TabUserChatPage,
     // TabUserHistoricPage
@@ -48,6 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SinupUserPage,
     SinupManicurePage,
     UserMainPage,
+    ManicureMainPage,
     //TabUserManicurePage,
     // TabUserChatPage,
     // TabUserHistoricPage
@@ -55,6 +59,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    MenuController,
+    NgModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
