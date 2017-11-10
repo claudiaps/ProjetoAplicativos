@@ -11,7 +11,7 @@
     </button>
     <ion-title>Manicure</ion-title>
   </ion-navbar>
-</ion-header>
+
 
 <div class="menu_color">
     <ion-segment [(ngModel)]="options">
@@ -83,6 +83,7 @@
 	</ion-list>
 
 	<ion-list *ngSwitchCase="'Agenda'">
+		<calendar></calendar>
 	</ion-list>
 
 	<ion-list *ngSwitchCase="'Chat'">

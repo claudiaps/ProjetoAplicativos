@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ManicureMainPage } from '../manicure-main/manicure-main';
+import { SingupManicurePage } from '../singup-manicure/singup-manicure';
+
+
 
 /**
  * Generated class for the ManicureLoginPage page.
@@ -20,6 +24,14 @@ export class ManicureLoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManicureLoginPage');
+  }
+
+  goToManicureMain(){
+    this.navCtrl.push(ManicureMainPage);
+  }
+
+  goToSingupManicure(){
+    this.navCtrl.push(SingupManicurePage);
   }
 
 }

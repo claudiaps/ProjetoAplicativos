@@ -2,22 +2,15 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MenuController } from 'ionic-angular';
-import { NgModule } from '@angular/core';
 
-
-//Pra impotar as paradinhas tem que importar aqui
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { UserLoginPage } from '../pages/user-login/user-login';
 import { ManicureLoginPage } from '../pages/manicure-login/manicure-login';
-import { SinupUserPage } from '../pages/sinup-user/sinup-user';
-import { SinupManicurePage } from '../pages/sinup-manicure/sinup-manicure';
-import { UserMainPage } from '../pages/user-main/user-main';
+import { UserLoginPage } from '../pages/user-login/user-login';
 import { ManicureMainPage } from '../pages/manicure-main/manicure-main';
-//import { TabUserManicurePage } from '../tab-user-manicure/tab-user-manicure';
-// import { TabUserHistoricPage } from '../tab-user-historic/tab-user-historic';
-// import { TabUserChatPage } from '../tab-user-chat/tab-user-chat';
+import { SingupManicurePage } from '../pages/singup-manicure/singup-manicure';
+import { SingupUserPage } from '../pages/singup-user/singup-user';
+import { UserMainPage } from '../pages/user-main/user-main';
 
 
 @Component({
@@ -27,11 +20,11 @@ import { ManicureMainPage } from '../pages/manicure-main/manicure-main';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = UserMainPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public menuCtrl: MenuController) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -56,17 +49,4 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-
-  openMenu() {
-     this.menuCtrl.open();
-   }
-
- closeMenu() {
-     this.menuCtrl.close();
-   }
-
- toggleMenu() {
-   this.menuCtrl.toggle();
- }
-
 }

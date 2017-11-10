@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UserMainPage } from '../user-main/user-main';
+import { SingupUserPage } from '../singup-user/singup-user';
+
 
 /**
  * Generated class for the UserLoginPage page.
@@ -20,6 +23,14 @@ export class UserLoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserLoginPage');
+  }
+
+  goToUserMain(){
+    this.navCtrl.push(UserMainPage);
+  }
+
+  goToUserSingup(){
+    this.navCtrl.push(SingupUserPage);
   }
 
 }

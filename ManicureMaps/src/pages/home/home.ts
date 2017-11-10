@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ManicureLoginPage } from '../manicure-login/manicure-login';
+import { UserLoginPage } from '../user-login/user-login';
+
 
 @Component({
   selector: 'page-home',
@@ -10,5 +13,13 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
+
+    goToUserLogin(){
+      this.navCtrl.push(UserLoginPage);
+    }
+
+    goToManicureLogin(){
+      this.navCtrl.push(ManicureLoginPage);
+    }
 
 }

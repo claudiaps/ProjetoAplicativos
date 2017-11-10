@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-// import { TabUserManicurePage } from '../tab-user-manicure/tab-user-manicure';
-// import { TabUserHistoricPage } from '../tab-user-historic/tab-user-historic';
-// import { TabUserChatPage } from '../tab-user-chat/tab-user-chat';
 
 /**
  * Generated class for the UserMainPage page.
@@ -16,24 +13,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-user-main',
   templateUrl: 'user-main.html',
 })
-
-// export class TabsPage {
-
-//   tabManicure = TabUserManicurePage;
-//   tabHistoric = TabUserHistoricPage;
-//   tabChat = TabUserChatPage;
-
-//   constructor() {
-
-//   }
-// }
-
 export class UserMainPage {
-	searchQuery: string = ''; //barra de pesquisa
-  	items: string[]; //barra de pesquisa
+  searchQuery: string = ''; //barra de pesquisa
+  items: string[]; //barra de pesquisa
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	this.initializeItems(); //barra de pesquisa
+    this.initializeItems(); //barra de pesquisa
   }
 
   ionViewDidLoad() {
@@ -63,3 +48,5 @@ export class UserMainPage {
   }//até aqui b.p
 
 }
+
+

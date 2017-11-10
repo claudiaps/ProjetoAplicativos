@@ -26,11 +26,11 @@
   </ion-list>
 
   <div class="margin_top_small">
-    <button class="button_color height_button margin_bottom_bottom" ion-button full>Entrar</button>
-    <button class="button_color height_button" ion-button full>Cadastrar</button>
+    <button class="button_color height_button margin_bottom_bottom" (click)="goToUserMain()" ion-button full>Entrar</button>
+    <button class="button_color height_button" ion-button full (click)="goToUserSingup()">Cadastrar</button>
   </div>
 
-  <button ion-button icon-center round class="button_color margin_top_huge">
+  <button ion-button icon-center round class="button_color margin_top_huge" >
     <ion-icon name="home" class="size" ></ion-icon>
   </button>
 
