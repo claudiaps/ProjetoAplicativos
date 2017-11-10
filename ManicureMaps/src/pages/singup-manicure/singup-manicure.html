@@ -20,6 +20,16 @@
     </ion-item>
 
     <ion-item class="input_color margin_bottom">
+        <ion-label floating color="dark">Digite seu Endereço</ion-label>
+        <ion-input [(ngModel)]="email" type="text" value=""></ion-input>
+      </ion-item>
+
+      <ion-item class="input_color margin_bottom">
+          <ion-label floating color="dark">Digite sua Cidade</ion-label>
+          <ion-input [(ngModel)]="email" type="text" value=""></ion-input>
+        </ion-item>
+
+    <ion-item class="input_color margin_bottom">
       <ion-label floating color="dark">Digite seu Email</ion-label>
       <ion-input [(ngModel)]="email" type="text" value=""></ion-input>
     </ion-item>
@@ -51,7 +61,4 @@
       <button class="button_color height_button" ion-button full>Criar Cadastro</button>
   </div>
 
-  <button ion-button icon-center round class="button_color margin_top_top">
-    <ion-icon name="home" class="size" ></ion-icon>
-  </button>
 </ion-content>

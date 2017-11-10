@@ -16,10 +16,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ManicureMainPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.options = "Perfil"; //setar perfil como tab inicial
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManicureMainPage');
   }
+
 
 }
