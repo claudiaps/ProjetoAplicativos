@@ -30,13 +30,14 @@ import { Calendar } from '../components/calendar/calendar';
     SingupUserPage,
     UserMainPage,
     Calendar
-    
   ],
+
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CalendarModule,
   ],
+  
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,

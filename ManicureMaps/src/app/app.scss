@@ -64,10 +64,9 @@
   }
   
   .background_image{
-    /*Tirei para poder testar, enxergar melhor
-      background: url(../../assets/imgs/back);
-      background-size: cover;*/
-    background-color: rgba(150, 145, 145, 0.486);
+
+      background: url(../../assets/imgs/background.png);
+      background-size: cover;
   }
   
   .input_color{
