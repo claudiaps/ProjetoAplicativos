@@ -9,5 +9,8 @@ import { ManicureMainPage } from './manicure-main';
   imports: [
     IonicPageModule.forChild(ManicureMainPage),
   ],
+  exports: [
+    ManicureMainPage
+  ]
 })
 export class ManicureMainPageModule {}

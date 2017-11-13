@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ManicureMainPage } from '../manicure-main/manicure-main';
-import { SingupManicurePage } from '../singup-manicure/singup-manicure';
 
+import { AuthProvider } from '../../providers/auth/auth';
 
+import { usercreds } from '../../models/interface/usercreds';
 
 /**
  * Generated class for the ManicureLoginPage page.
@@ -19,19 +19,25 @@ import { SingupManicurePage } from '../singup-manicure/singup-manicure';
 })
 export class ManicureLoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  credentials = {} as usercreds;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authservive: AuthProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManicureLoginPage');
   }
 
-  goToManicureMain(){
-    this.navCtrl.push(ManicureMainPage);
-  }
+  singin() {
+    this.authservive.login(this.credentials).then ((res: any) => {
+      if(!res.code)
+        this.navCtrl.setRoot('ManicureMainPage');
+      else
+        alert(res);  
+    })
+  } 
 
-  goToSingupManicure(){
-    this.navCtrl.push(SingupManicurePage);
+  singup () {
+    this.navCtrl.push('SingupManicurePage');
   }
 
 }

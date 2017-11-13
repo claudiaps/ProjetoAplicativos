@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ManicureMainPage page.
+ * Generated class for the ChatPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,14 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-manicure-main',
-  templateUrl: 'manicure-main.html',
+  selector: 'page-chat',
+  templateUrl: 'chat.html',
 })
-export class ManicureMainPage {
+export class ChatPage {
 
-  tab1: string = "ManicureProfilePage";
-  tab2: string = "CalendarPage";
-  tab3: string = "ChatPage";
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ChatPage');
+  }
 
 }

@@ -1,21 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { CalendarModule } from "ion2-calendar";
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+//modules
+import { SingupManicurePageModule } from '../pages/singup-manicure/singup-manicure.module';
+import { ManicureMainPageModule } from '../pages/manicure-main/manicure-main.module';
+
+
+//pages
+import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
 import { ManicureLoginPage } from '../pages/manicure-login/manicure-login';
 import { UserLoginPage } from '../pages/user-login/user-login';
 import { ManicureMainPage } from '../pages/manicure-main/manicure-main';
 import { SingupManicurePage } from '../pages/singup-manicure/singup-manicure';
 import { SingupUserPage } from '../pages/singup-user/singup-user';
 import { UserMainPage } from '../pages/user-main/user-main';
-import { Calendar } from '../components/calendar/calendar';
+
+//components
+import { MyApp } from './app.component';
+
+import { AngularFireModule } from 'angularfire2';
+import { AuthProvider } from '../providers/auth/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { config } from './app.firebaseconfig';
+import { UserProvider } from '../providers/user/user';
+
 
 
 @NgModule({
@@ -25,17 +37,18 @@ import { Calendar } from '../components/calendar/calendar';
     ListPage,
     ManicureLoginPage,
     UserLoginPage,
-    ManicureMainPage,
-    SingupManicurePage,
+    //SingupManicurePage,
+    // ManicureMainPage,
     SingupUserPage,
     UserMainPage,
-    Calendar
   ],
-
-  imports: [
+  
+  imports: [ 
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    CalendarModule,
+    IonicModule.forRoot(MyApp, {tabsPlacement: 'top'}),
+    AngularFireModule.initializeApp(config),
+    ManicureMainPageModule,
+    SingupManicurePageModule
   ],
   
   bootstrap: [IonicApp],
@@ -54,7 +67,10 @@ import { Calendar } from '../components/calendar/calendar';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
+    AngularFireAuth,
+    UserProvider
   ]
 })
 export class AppModule {}
