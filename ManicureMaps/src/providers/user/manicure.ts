@@ -10,9 +10,9 @@ import firebase from 'firebase';
   and Angular DI.
 */
 @Injectable()
-export class UserProvider {
+export class ManicureProvider {
 
-  firedata = firebase.database().ref('/user');
+  firedata = firebase.database().ref('/manicure');
   constructor(public afireauth: AngularFireAuth) {
     //console.log('Hello UserProvider Provider');
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
-import { UserProvider } from '../../providers/user/user';
+import { ManicureProvider } from '../../providers/user/manicure';
 
 /**
  * Generated class for the SingupManicurePage page.
@@ -21,7 +21,7 @@ export class SingupManicurePage {
     password: '',
     displayName: ''
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userservice: UserProvider,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userservice: ManicureProvider,
     public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
   }
 

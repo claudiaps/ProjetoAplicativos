@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { UserMainPage } from '../user-main/user-main';
-import { SingupUserPage } from '../singup-user/singup-user';
 
+import { AuthProvider } from '../../providers/auth/auth';
+
+import { usercreds } from '../../models/interface/usercreds';
 
 /**
- * Generated class for the UserLoginPage page.
+ * Generated class for the ManicureLoginPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -18,19 +19,26 @@ import { SingupUserPage } from '../singup-user/singup-user';
 })
 export class UserLoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  credentials = {} as usercreds;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authservive: AuthProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserLoginPage');
   }
 
-  goToUserMain(){
-    this.navCtrl.push(UserMainPage);
-  }
+  singin() {
+    this.authservive.login(this.credentials).then ((res: any) => {
+      if(!res.code)
+        this.navCtrl.setRoot('UserMainPage');
+      else
+        alert(res);  
+    })
+  } 
 
-  goToUserSingup(){
-    this.navCtrl.push(SingupUserPage);
+  singup () {
+    this.navCtrl.push('SingupUserPage');
   }
 
 }
+

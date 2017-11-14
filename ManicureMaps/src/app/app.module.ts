@@ -7,6 +7,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //modules
 import { SingupManicurePageModule } from '../pages/singup-manicure/singup-manicure.module';
 import { ManicureMainPageModule } from '../pages/manicure-main/manicure-main.module';
+import { UserLoginPageModule } from '../pages/user-login/user-login.module';
+import { UserMainPageModule } from '../pages/user-main/user-main.module';
 
 
 //pages
@@ -21,13 +23,15 @@ import { UserMainPage } from '../pages/user-main/user-main';
 
 //components
 import { MyApp } from './app.component';
-
 import { AngularFireModule } from 'angularfire2';
 import { AuthProvider } from '../providers/auth/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { config } from './app.firebaseconfig';
-import { UserProvider } from '../providers/user/user';
 
+//providers
+import { ManicureProvider } from '../providers/user/manicure';
+import { UserProvider } from '../providers/user/user';
+import { SingupUserPageModule } from '../pages/singup-user/singup-user.module';
 
 
 @NgModule({
@@ -36,11 +40,11 @@ import { UserProvider } from '../providers/user/user';
     HomePage,
     ListPage,
     ManicureLoginPage,
-    UserLoginPage,
+    //UserLoginPage,
     //SingupManicurePage,
     // ManicureMainPage,
-    SingupUserPage,
-    UserMainPage,
+    //SingupUserPage,
+    //UserMainPage,
   ],
   
   imports: [ 
@@ -48,7 +52,10 @@ import { UserProvider } from '../providers/user/user';
     IonicModule.forRoot(MyApp, {tabsPlacement: 'top'}),
     AngularFireModule.initializeApp(config),
     ManicureMainPageModule,
-    SingupManicurePageModule
+    SingupManicurePageModule,
+    UserLoginPageModule,
+    UserMainPageModule,
+    SingupUserPageModule
   ],
   
   bootstrap: [IonicApp],
@@ -70,7 +77,8 @@ import { UserProvider } from '../providers/user/user';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     AngularFireAuth,
-    UserProvider
+    UserProvider,
+    ManicureProvider
   ]
 })
 export class AppModule {}
