@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ManicureLoginPage } from '../manicure-login/manicure-login';
-import { UserLoginPage } from '../user-login/user-login';
+import { ManicureLoginPage } from '../manicure/manicure-login/manicure-login';
+import { UserLoginPage } from '../user/user-login/user-login';
 
 
 @Component({

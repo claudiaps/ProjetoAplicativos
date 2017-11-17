@@ -5,21 +5,25 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 //modules
-import { SingupManicurePageModule } from '../pages/singup-manicure/singup-manicure.module';
-import { ManicureMainPageModule } from '../pages/manicure-main/manicure-main.module';
-import { UserLoginPageModule } from '../pages/user-login/user-login.module';
-import { UserMainPageModule } from '../pages/user-main/user-main.module';
+import { SingupManicurePageModule } from '../pages/manicure/singup-manicure/singup-manicure.module';
+import { ManicureMainPageModule } from '../pages/manicure/manicure-main/manicure-main.module';
+import { UserLoginPageModule } from '../pages/user/user-login/user-login.module';
+import { UserMainPageModule } from '../pages/user/user-main/user-main.module';
 
 
 //pages
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ManicureLoginPage } from '../pages/manicure-login/manicure-login';
-import { UserLoginPage } from '../pages/user-login/user-login';
-import { ManicureMainPage } from '../pages/manicure-main/manicure-main';
-import { SingupManicurePage } from '../pages/singup-manicure/singup-manicure';
-import { SingupUserPage } from '../pages/singup-user/singup-user';
-import { UserMainPage } from '../pages/user-main/user-main';
+import { ManicureLoginPage } from '../pages/manicure/manicure-login/manicure-login';
+import { UserLoginPage } from '../pages/user/user-login/user-login';
+import { ManicureMainPage } from '../pages/manicure/manicure-main/manicure-main';
+import { SingupManicurePage } from '../pages/manicure/singup-manicure/singup-manicure';
+import { SingupUserPage } from '../pages/user/singup-user/singup-user';
+import { UserMainPage } from '../pages/user/user-main/user-main';
+import { PasswordResetManicurePage } from '../pages/manicure/password-reset-manicure/password-reset-manicure';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
 
 //components
 import { MyApp } from './app.component';
@@ -31,7 +35,9 @@ import { config } from './app.firebaseconfig';
 //providers
 import { ManicureProvider } from '../providers/user/manicure';
 import { UserProvider } from '../providers/user/user';
-import { SingupUserPageModule } from '../pages/singup-user/singup-user.module';
+import { SingupUserPageModule } from '../pages/user/singup-user/singup-user.module';
+import { PasswordResetManicurePageModule } from '../pages/manicure/password-reset-manicure/password-reset-manicure.module';
+import { ImghendlerProvider } from '../providers/imghendler/imghendler';
 
 
 @NgModule({
@@ -55,7 +61,8 @@ import { SingupUserPageModule } from '../pages/singup-user/singup-user.module';
     SingupManicurePageModule,
     UserLoginPageModule,
     UserMainPageModule,
-    SingupUserPageModule
+    SingupUserPageModule,
+    PasswordResetManicurePageModule
   ],
   
   bootstrap: [IonicApp],
@@ -74,11 +81,15 @@ import { SingupUserPageModule } from '../pages/singup-user/singup-user.module';
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    FilePath,
+    FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     AngularFireAuth,
     UserProvider,
-    ManicureProvider
+    ManicureProvider,
+    ImghendlerProvider
   ]
 })
 export class AppModule {}

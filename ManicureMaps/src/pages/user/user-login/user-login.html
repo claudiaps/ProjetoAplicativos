@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ManicureLoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar class="menu_color">
+    <ion-title class="align">
+      Usuário
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background_image" padding>
+  <ion-list>
+    <ion-item class="margin_top input_color margin_bottom">
+      <ion-label floating color="dark">Digite seu email</ion-label>
+      <ion-input [(ngModel)]="credentials.email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item class="input_color">
+      <ion-label floating color="dark">Digite sua senha</ion-label>
+      <ion-input [(ngModel)]="credentials.password" type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div class="margin_top_small">
+    <button class="button_color height_button margin_bottom_bottom" (click)="singin()" ion-button full>Entrar</button>
+    <button class="button_color height_button" (click)="singup()" ion-button full>Cadastrar</button>
+    <button class="button_color height_button" (click)="passwordReset()" ion-button full>Esqueceu sua senha?</button>
+    
+    
+  </div>
+
+
+</ion-content>
