@@ -6,12 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ManicureLoginPage } from '../pages/manicure/manicure-login/manicure-login';
-import { UserLoginPage } from '../pages/user/user-login/user-login';
-import { ManicureMainPage } from '../pages/manicure/manicure-main/manicure-main';
-import { SingupManicurePage } from '../pages/manicure/singup-manicure/singup-manicure';
-import { SingupUserPage } from '../pages/user/singup-user/singup-user';
-import { UserMainPage } from '../pages/user/user-main/user-main';
+// import { ManicureLoginPage } from '../pages/manicure/manicure-login/manicure-login';
+// import { UserLoginPage } from '../pages/user/user-login/user-login';
+// import { ManicureMainPage } from '../pages/manicure/manicure-main/manicure-main';
+// import { SingupManicurePage } from '../pages/manicure/singup-manicure/singup-manicure';
+// import { SingupUserPage } from '../pages/user/singup-user/singup-user';
+// import { UserMainPage } from '../pages/user/user-main/user-main';
 
 
 @Component({
