@@ -32,18 +32,18 @@ export class SingupManicurePage {
     });
 
     if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.displayName == '') {
-      toaster.setMessage('All fields are required');
+      toaster.setMessage('Preencha Todos os campos');
       toaster.present();
     }
 
     else if (this.newuser.password.length < 7) {
-      toaster.setMessage('Password is not strong, try again');
+      toaster.setMessage('Senha deve ter pelo menos 7 caracteres');
       toaster.present();
     }
 
     else {
       let loader = this.loadingCtrl.create({
-        content: 'Please Wait'
+        content: 'Aguarde'
       });
       loader.present();
       this.userservice.adduser(this.newuser).then((res: any) => {
