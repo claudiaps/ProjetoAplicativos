@@ -29,7 +29,7 @@ export class ManicureProfileEpicPage {
 
   chooseimage() {
     let loader = this.loadingCtrl.create({
-      content: 'Aguarde'
+      content: 'please wait'
     })
     loader.present();
     this.imgservice.uploadimage().then((uploadedurl: any) => {
@@ -44,7 +44,7 @@ export class ManicureProfileEpicPage {
 
   updateproceed() {
     let loader = this.loadingCtrl.create({
-      content: 'Aguarde'
+      content: 'please wait'
     })
     loader.present();
     this.userservice.updateimage(this.imgurl).then((res: any) => {

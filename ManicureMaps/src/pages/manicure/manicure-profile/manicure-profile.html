@@ -5,27 +5,28 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar color="pinkao">
-    <ion-title>Perfil Manicure</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content>
-  <div class="profile-image" (click)="editimage()">
-    <img src="{{avatar}}">
-  </div>
-  <div>
-    <h2 (click="editname()") {{displayName}}></h2>
-  </div>
-  <div>
-    Toque em sua foto ou em seu nome para editar
-  </div>
-  <div class="spacer" style="height: 10px;"></div>
-  <div>
-    <button ion-button clear outline color="pinkao" (click)="logout()">Sair</button>
-  </div>
-
-</ion-content>
+  
+    <ion-navbar color="pinkao">
+      <ion-title>Perfil Manicure</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+    <div class="profile-image" (click)="editimage()">
+      <img src="{{avatar}}">
+    </div>
+    <div>
+     <h2 (click)="editname()">{{displayName}}</h2>
+    </div>
+    <div>
+      Toque em sua foto ou em seu nome para editar
+    </div>
+    <div class="spacer" style="height: 10px;"></div>
+    <div>
+      <button ion-button clear outline color="pinkao" (click)="logout()">Sair</button>
+    </div>
+  
+  </ion-content>
+  

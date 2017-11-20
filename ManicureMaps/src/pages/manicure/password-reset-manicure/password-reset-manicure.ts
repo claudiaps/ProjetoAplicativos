@@ -34,8 +34,8 @@ export class PasswordResetManicurePage {
     this.userservice.passwordreset(this.email).then((res: any) => {
       if(res.success){
         console.log('entrou felz');                                        
-        alert.setTitle('Email Enviado');
-        alert.setSubTitle('Por favor, abra seu e-mail e sigua os passos para a redefinição de senha');
+        alert.setTitle('Email sent');
+        alert.setSubTitle('Please open your email and follow de instructions to change the password');
         
       }
       else {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { AuthProvider } from '../../../providers/auth/auth';
 
@@ -21,7 +21,8 @@ import { PasswordResetManicurePage } from '../password-reset-manicure/password-r
 export class ManicureLoginPage {
 
   credentials = {} as usercreds;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authservive: AuthProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public authservive: AuthProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -30,8 +31,9 @@ export class ManicureLoginPage {
 
   singin() {
     this.authservive.login(this.credentials).then ((res: any) => {
-      if(!res.code)
+      if(!res.code){
         this.navCtrl.setRoot('ManicureMainPage');
+      }
       else
         alert(res);  
     })

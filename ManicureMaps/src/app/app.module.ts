@@ -38,6 +38,7 @@ import { UserProvider } from '../providers/user/user';
 import { SingupUserPageModule } from '../pages/user/singup-user/singup-user.module';
 import { PasswordResetManicurePageModule } from '../pages/manicure/password-reset-manicure/password-reset-manicure.module';
 import { ImghendlerProvider } from '../providers/imghendler/imghendler';
+import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicure-login.module';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { ImghendlerProvider } from '../providers/imghendler/imghendler';
     MyApp,
     HomePage,
     ListPage,
-    ManicureLoginPage,
+    //ManicureLoginPage,
     //UserLoginPage,
     //SingupManicurePage,
     // ManicureMainPage,
@@ -62,7 +63,8 @@ import { ImghendlerProvider } from '../providers/imghendler/imghendler';
     UserLoginPageModule,
     UserMainPageModule,
     SingupUserPageModule,
-    PasswordResetManicurePageModule
+    PasswordResetManicurePageModule,
+    ManicureLoginPageModule
   ],
   
   bootstrap: [IonicApp],
