@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { ImghendlerProvider } from '../../../providers/imghendler/imghendler'
 import { ManicureProvider } from '../../../providers/user/manicure'
 import firebase from 'firebase';
@@ -17,10 +17,11 @@ import firebase from 'firebase';
   templateUrl: 'manicure-profile.html',
 })
 export class ManicureProfilePage {
+  imgurl = 'https://firebasestorage.googleapis.com/v0/b/manicuremaps.appspot.com/o/screen-ipad-landscape.png?alt=media&token=5915a394-5e7c-4572-88d5-a8992692fbe5'  
   avatar: string;
   displayName: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public userservice: ManicureProvider,
-    public zone: NgZone, public alertCtrl: AlertController, public imghandler: ImghendlerProvider) {
+    public zone: NgZone, public alertCtrl: AlertController, public imghandler: ImghendlerProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewWillEnter() {
@@ -99,6 +100,22 @@ export class ManicureProfilePage {
           statusalert.setSubTitle('Deu bosta');
           statusalert.present();
       })
+    })
+  }
+
+  updateproceed() {
+    let loader = this.loadingCtrl.create({
+      content: 'please wait'
+    })
+    loader.present();
+    this.userservice.updateimage(this.imgurl).then((res: any) => {
+      loader.dismiss();
+      if(res.success){
+        this.navCtrl.setRoot('ManicureMainPage');
+      }
+      else{
+        alert(res);
+      }
     })
   }
 
