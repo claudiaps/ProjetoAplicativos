@@ -87,6 +87,7 @@ export class ManicureProfilePage {
     });
     this.imghandler.uploadimage().then((url: any) => {
       this.userservice.updateimage(url).then((res: any) => {
+        
         if (res.success) {
           statusalert.setTitle('Updated');
           statusalert.setSubTitle('Atualizado com sucesso');
@@ -103,21 +104,6 @@ export class ManicureProfilePage {
     })
   }
 
-  updateproceed() {
-    let loader = this.loadingCtrl.create({
-      content: 'please wait'
-    })
-    loader.present();
-    this.userservice.updateimage(this.imgurl).then((res: any) => {
-      loader.dismiss();
-      if(res.success){
-        this.navCtrl.setRoot('ManicureMainPage');
-      }
-      else{
-        alert(res);
-      }
-    })
-  }
 
   logout() {
     firebase.auth().signOut().then(() => {

@@ -59,12 +59,14 @@ export class ManicureProvider {
     var promise = new Promise((resolve, reject) => {
       this.afireauth.auth.currentUser.updateProfile({
         displayName: this.afireauth.auth.currentUser.displayName,
-        photoURL: imageurl
+        photoURL: imageurl,
       }).then(() => {
-        firebase.database().ref('/manicure' + firebase.auth().currentUser.uid).update({
+        this.firedata.child(firebase.auth().currentUser.uid).update({          
+        //firebase.database().ref('/manicure' + firebase.auth().currentUser.uid).update({
           displayName: this.afireauth.auth.currentUser.displayName,
           photoURL: imageurl,
-          uid: firebase.auth().currentUser.uid
+          uid: this.afireauth.auth.currentUser.uid
+          //uid: firebase.auth().currentUser.uid
         }).then(() => {
           resolve({ success: true });
         }).catch((err) => {
