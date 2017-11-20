@@ -14,39 +14,45 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user-main.html',
 })
 export class UserMainPage {
-  searchQuery: string = ''; //barra de pesquisa
-  items: string[]; //barra de pesquisa
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.initializeItems(); //barra de pesquisa
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UserMainPage');
-  }
-
-  initializeItems() {
-    this.items = [
-      //arrumar um jeito de colocar os bairros aqui para poder pesquisar pelo bairro
-    ];
-  }
-
-  //barra de pesquisa
-  getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }//até aqui b.p
-
+  tab1: string = "UserProfilePage";
+  tab2: string = "UserManicurePage";
+  tab3: string = "ChatPage";
 }
+
+
+  // searchQuery: string = ''; //barra de pesquisa
+  // items: string[]; //barra de pesquisa
+
+//  constructor(public navCtrl: NavController, public navParams: NavParams) {
+   // this.initializeItems(); //barra de pesquisa
+  
+
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad UserMainPage');
+  // }
+
+//   initializeItems() {
+//     this.items = [
+//       //arrumar um jeito de colocar os bairros aqui para poder pesquisar pelo bairro
+//     ];
+//   }
+
+//   //barra de pesquisa
+//   getItems(ev: any) {
+//     // Reset items back to all of the items
+//     this.initializeItems();
+
+//     // set val to the value of the searchbar
+//     let val = ev.target.value;
+
+//     // if the value is an empty string don't filter the items
+//     if (val && val.trim() != '') {
+//       this.items = this.items.filter((item) => {
+//         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+//       })
+//     }
+//   }//até aqui b.p
+
+// }
 
 

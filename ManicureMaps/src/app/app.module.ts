@@ -40,7 +40,6 @@ import { PasswordResetManicurePageModule } from '../pages/manicure/password-rese
 import { ImghendlerProvider } from '../providers/imghendler/imghendler';
 import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicure-login.module';
 
-
 @NgModule({
   declarations: [
     MyApp,
