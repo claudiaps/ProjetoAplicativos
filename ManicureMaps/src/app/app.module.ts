@@ -20,7 +20,7 @@ import { ManicureMainPage } from '../pages/manicure/manicure-main/manicure-main'
 import { SingupManicurePage } from '../pages/manicure/singup-manicure/singup-manicure';
 import { SingupUserPage } from '../pages/user/singup-user/singup-user';
 import { UserMainPage } from '../pages/user/user-main/user-main';
-import { PasswordResetManicurePage } from '../pages/manicure/password-reset-manicure/password-reset-manicure';
+//import { PasswordResetManicurePage } from '../pages/manicure/password-reset-manicure/password-reset-manicure';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
@@ -32,6 +32,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { config } from './app.firebaseconfig';
 
+
 //providers
 import { ManicureProvider } from '../providers/user/manicure';
 import { UserProvider } from '../providers/user/user';
@@ -39,6 +40,7 @@ import { SingupUserPageModule } from '../pages/user/singup-user/singup-user.modu
 import { PasswordResetManicurePageModule } from '../pages/manicure/password-reset-manicure/password-reset-manicure.module';
 import { ImghendlerProvider } from '../providers/imghendler/imghendler';
 import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicure-login.module';
+import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicure.module';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicu
     UserMainPageModule,
     SingupUserPageModule,
     PasswordResetManicurePageModule,
-    ManicureLoginPageModule
+    ManicureLoginPageModule,
+    UserManicurePageModule
   ],
   
   bootstrap: [IonicApp],
