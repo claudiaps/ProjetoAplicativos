@@ -13,14 +13,12 @@ import { UserMainPageModule } from '../pages/user/user-main/user-main.module';
 
 //pages
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { ManicureLoginPage } from '../pages/manicure/manicure-login/manicure-login';
 import { UserLoginPage } from '../pages/user/user-login/user-login';
 import { ManicureMainPage } from '../pages/manicure/manicure-main/manicure-main';
 import { SingupManicurePage } from '../pages/manicure/singup-manicure/singup-manicure';
 import { SingupUserPage } from '../pages/user/singup-user/singup-user';
 import { UserMainPage } from '../pages/user/user-main/user-main';
-//import { PasswordResetManicurePage } from '../pages/manicure/password-reset-manicure/password-reset-manicure';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
@@ -46,7 +44,6 @@ import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicur
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     //ManicureLoginPage,
     //UserLoginPage,
     //SingupManicurePage,
@@ -73,7 +70,6 @@ import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicur
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     ManicureLoginPage,
     UserLoginPage,
     ManicureMainPage,

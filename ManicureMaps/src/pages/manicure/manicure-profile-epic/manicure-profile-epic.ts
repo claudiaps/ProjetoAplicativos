@@ -44,7 +44,7 @@ export class ManicureProfileEpicPage {
 
   updateproceed() {
     let loader = this.loadingCtrl.create({
-      content: 'please wait'
+      content: 'Por Favor Aguarde'
     })
     loader.present();
     this.userservice.updateimage(this.imgurl).then((res: any) => {
@@ -53,7 +53,7 @@ export class ManicureProfileEpicPage {
         this.navCtrl.setRoot('ManicureMainPage');
       }
       else{
-        alert(res);
+        alert('Erro na Atualização do Perfil\n Por Favor Tente Novamente');
       }
     })
   }

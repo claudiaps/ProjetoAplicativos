@@ -32,18 +32,18 @@ export class SingupUserPage {
     });
 
     if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.displayName == '') {
-      toaster.setMessage('All fields are required');
+      toaster.setMessage('Preencha Todos os Campos');
       toaster.present();
     }
 
     else if (this.newuser.password.length < 7) {
-      toaster.setMessage('Password is not strong, try again');
+      toaster.setMessage('A Senha Deve Ter no Minimo 7 Digitos');
       toaster.present();
     }
 
     else {
       let loader = this.loadingCtrl.create({
-        content: 'Please Wait'
+        content: 'Por Favor Aguarde'
       });
       loader.present();
       this.userservice.adduser(this.newuser).then((res: any) => {

@@ -27,6 +27,70 @@
       <ion-input [(ngModel)]="newuser.email" type="text" placeholder="Email"></ion-input>
     </ion-item>
 
+    <ion-item-divider> Endêreço </ion-item-divider>
+
+    <ion-item class="input_color margin_bottom">
+      <ion-input [(ngModel)]="newuser.logradouro" type="text" placeholder="Logradouro"></ion-input>
+    </ion-item>
+
+    <ion-item class="input_color margin_bottom">
+      <ion-input [(ngModel)]="newuser.numero" type="text" placeholder="Número"></ion-input>
+    </ion-item>
+
+    <ion-item class="input_color margin_bottom">
+      <ion-input [(ngModel)]="newuser.bairro" type="text" placeholder="Bairro"></ion-input>
+    </ion-item>
+
+    <ion-item class="input_color margin_bottom">
+      <ion-input [(ngModel)]="newuser.complemento" type="text" placeholder="Complemento"></ion-input>
+    </ion-item>
+
+    <ion-item class="input_color margin_bottom">
+      <ion-input [(ngModel)]="newuser.cidade" type="text" placeholder="Cidade"></ion-input>
+    </ion-item>
+
+    <ion-item class="input_color margin_bottom">
+      <ion-label> Estado </ion-label>
+      <ion-select [(ngModel)]="newuser.estado">
+        <ion-option value="AC"> ÁCRE </ion-option>
+        <ion-option value="AL"> ALAGOAS </ion-option>
+        <ion-option value="AM"> AMAZONAS </ion-option>
+        <ion-option value="AP"> AMAPÁ </ion-option>
+        <ion-option value="BA"> BAHIA </ion-option>
+        <ion-option value="CE"> CEARÁ </ion-option>
+        <ion-option value="DF"> DISTRITO FEDERAL </ion-option>
+        <ion-option value="ES"> ESPIRITO SANRO </ion-option>
+        <ion-option value="GO"> GOIAIS </ion-option>
+        <ion-option value="MA"> MARANHÃO </ion-option>
+        <ion-option value="MT"> MATO GROSSO </ion-option>
+        <ion-option value="MS"> MATO GROSSO DO SUL </ion-option>
+        <ion-option value="MG"> MINAS GERAIS </ion-option>
+        <ion-option value="PA"> PARÁ </ion-option>
+        <ion-option value="PB"> PARAÍBA </ion-option>
+        <ion-option value="PR"> PARANÁ </ion-option>
+        <ion-option value="PE"> PERNANBUCO </ion-option>
+        <ion-option value="PI"> PIAUÍ </ion-option>
+        <ion-option value="RJ"> RIO DE JANEIRO </ion-option>
+        <ion-option value="RN"> RIO GRANDE DO NORTE </ion-option>
+        <ion-option value="RS"> RIO GRANDE DO SUL </ion-option>
+        <ion-option value="RO"> RONDÔNIA </ion-option>
+        <ion-option value="RR"> RORAIMA </ion-option>
+        <ion-option value="SC"> SANTA CATARINA </ion-option>
+        <ion-option value="SP"> SÃO PAULO </ion-option>
+        <ion-option value="SE"> SERGIPE </ion-option>
+        <ion-option value="TO"> TOCANTIS </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item-divider> Atêndimento </ion-item-divider>
+
+    <ion-item class="input_color margin_bottom">
+      <ion-label> Local de Atêndimento </ion-label>
+      <ion-select [(ngModel)]="newuser.atendimento" multiple="true">
+        <ion-option> Salão de Beleza</ion-option>
+        <ion-option> Em Domicilio </ion-option>
+      </ion-select>
+    </ion-item>
   </ion-list>
 
   <div class="margin_top_small">

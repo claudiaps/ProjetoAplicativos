@@ -19,7 +19,15 @@ export class SingupManicurePage {
   newuser = {
     email: '',
     password: '',
-    displayName: ''
+    displayName: '',
+    logradouro: '',
+    numero: '',
+    bairro: '',
+    complemento: '',
+    cidade: '',
+    estado: '',
+    atendimento: '',
+
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userservice: ManicureProvider,
     public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
@@ -31,19 +39,19 @@ export class SingupManicurePage {
       position: 'bottom'
     });
 
-    if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.displayName == '') {
-      toaster.setMessage('All fields are required');
+     if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.displayName == '' || this.newuser.logradouro == '' || this.newuser.numero == '' || this.newuser.bairro == '' || this.newuser.complemento == '' || this.newuser.cidade == '' || this.newuser.estado == '' || this.newuser.atendimento == '') {
+      toaster.setMessage('Por Favor Preencha Todos os Campos!');
       toaster.present();
     }
 
     else if (this.newuser.password.length < 7) {
-      toaster.setMessage('Password is not strong, try again');
+      toaster.setMessage('A Senha Deve Ter no Minimo 7 Digitos');
       toaster.present();
     }
 
     else {
       let loader = this.loadingCtrl.create({
-        content: 'Please Wait'
+        content: 'Por Favor Aguarde'
       });
       loader.present();
       this.userservice.adduser(this.newuser).then((res: any) => {
@@ -51,7 +59,7 @@ export class SingupManicurePage {
         if (res.sucess)
           this.navCtrl.push('ManicureProfileEpicPage');
         else
-          console.log('Error' , res);
+          console.log('Erro: ' , res);
       })
     }
   }

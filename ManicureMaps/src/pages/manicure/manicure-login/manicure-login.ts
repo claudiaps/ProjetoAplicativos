@@ -35,7 +35,7 @@ export class ManicureLoginPage {
         this.navCtrl.setRoot('ManicureMainPage');
       }
       else
-        alert(res);  
+        alert("Erro ao Fazer Login\nPor Favor Tente Novamente");  
     })
   } 
 

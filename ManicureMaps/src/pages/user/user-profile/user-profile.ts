@@ -62,16 +62,16 @@ export class UserProfilePage {
             (
               this.userservice.updatedisplayname(data.nickname).then((res: any) => {
                 if (res.success) {
-                  statusalert.setTitle('Updated');
-                  statusalert.setSubTitle('Atualizado com sucesso');
+                  statusalert.setTitle('Atualização');
+                  statusalert.setSubTitle('Nome Atualizado com Sucesso');
                   statusalert.present();
                   this.zone.run(() => {
                     this.displayName = data.nickname
                   })
                 }
                 else {
-                  statusalert.setTitle('Failed');
-                  statusalert.setSubTitle('Deu bosta');
+                  statusalert.setTitle('Erro');
+                  statusalert.setSubTitle('Erro ao Atualizar o Nome\n Por Favor Tente Novamente');
                   statusalert.present();
                 }
               })
@@ -91,16 +91,16 @@ export class UserProfilePage {
       this.userservice.updateimage(url).then((res: any) => {
         
         if (res.success) {
-          statusalert.setTitle('Updated');
-          statusalert.setSubTitle('Atualizado com sucesso');
+          statusalert.setTitle('Atualização');
+          statusalert.setSubTitle('Foto Atualizada com Sucesso');
           statusalert.present();
           this.zone.run(() => {
             this.avatar = url;
           })
         }
       }).catch((err) => {
-          statusalert.setTitle('Failed');
-          statusalert.setSubTitle('Deu bosta');
+          statusalert.setTitle('Erro');
+          statusalert.setSubTitle('Erro ao Atualizar a Foto\n Por Favor Tente Novamente');
           statusalert.present();
       })
     })

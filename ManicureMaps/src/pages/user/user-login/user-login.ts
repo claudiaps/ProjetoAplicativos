@@ -34,7 +34,7 @@ export class UserLoginPage {
       if(!res.code)
         this.navCtrl.setRoot('UserMainPage');
       else
-        alert(res);  
+        alert('Por Favor Tente Novamente');  
     })
   } 
 

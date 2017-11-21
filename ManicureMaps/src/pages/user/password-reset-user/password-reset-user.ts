@@ -34,14 +34,15 @@ export class PasswordResetUserPage {
     });
     this.userservice.passwordreset(this.email).then((res: any) => {
       if(res.success){
-        console.log('entrou felz');                                        
-        alert.setTitle('Email sent');
-        alert.setSubTitle('Please open your email and follow de instructions to change the password');
+        console.log('Email Enviado');                                        
+        alert.setTitle('Email Enviado');
+        alert.setSubTitle('Por Favor Entre em Seu Email e Siga as Instruções para Recuperar a Senha');
         
       }
       else {
-        console.log('sdasd');                                        
-        alert.setTitle('Failed');
+        console.log('Erro Resetar Senha'); 
+        alert.setTitle('Erro');                                       
+        alert.setSubTitle('Erro ao Recuperar a Senha\n Por Favor Tente Novamente');
       }
       alert.present(); 
     })

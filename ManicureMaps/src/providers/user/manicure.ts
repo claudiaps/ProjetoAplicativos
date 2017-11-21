@@ -14,7 +14,6 @@ export class ManicureProvider {
 
   firedata = firebase.database().ref('/manicure');
   constructor(public afireauth: AngularFireAuth) {
-    //console.log('Hello UserProvider Provider');
   }
 
   adduser(newuser) {
@@ -27,7 +26,13 @@ export class ManicureProvider {
           this.firedata.child(this.afireauth.auth.currentUser.uid).set({
             uid: this.afireauth.auth.currentUser.uid,
             displayName: newuser.displayName,
-            photoURL: 'https://firebasestorage.googleapis.com/v0/b/manicuremaps.appspot.com/o/screen-ipad-landscape.png?alt=media&token=5915a394-5e7c-4572-88d5-a8992692fbe5'
+            photoURL: 'https://firebasestorage.googleapis.com/v0/b/manicuremaps.appspot.com/o/screen-ipad-landscape.png?alt=media&token=5915a394-5e7c-4572-88d5-a8992692fbe5',
+            logradouro: newuser.logradouro,
+            numero: newuser.numero,
+            bairro: newuser.bairro,
+            cidade: newuser.cidade,
+            estado: newuser.estado,
+            atendimento: newuser.atendimento,
           }).then(() => {
             resolve({ sucess: true });
           }).catch((err) => {
@@ -62,11 +67,9 @@ export class ManicureProvider {
         photoURL: imageurl,
       }).then(() => {
         this.firedata.child(firebase.auth().currentUser.uid).update({          
-        //firebase.database().ref('/manicure' + firebase.auth().currentUser.uid).update({
           displayName: this.afireauth.auth.currentUser.displayName,
           photoURL: imageurl,
           uid: this.afireauth.auth.currentUser.uid
-          //uid: firebase.auth().currentUser.uid
         }).then(() => {
           resolve({ success: true });
         }).catch((err) => {
@@ -126,7 +129,6 @@ export class ManicureProvider {
         reject(err);
       })
     })
-    console.log('vamo satanais');
     return promise;
   }
 
