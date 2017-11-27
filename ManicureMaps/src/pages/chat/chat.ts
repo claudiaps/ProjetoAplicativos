@@ -1,5 +1,7 @@
+import { RequestsProvider } from './../../providers/requests/requests';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+
 
 /**
  * Generated class for the ChatPage page.
@@ -14,12 +16,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'chat.html',
 })
 export class ChatPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  myrequests;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public requestservice: RequestsProvider,
+              public events: Events) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ChatPage');
+  ionViewWillEnter() {
+    this.requestservice.getmyrequests();
+    this.events.subscribe('gotrequests', () => {
+      this.myrequests = [];
+      this.myrequests = this.requestservice.userdetails;
+    })
+    
+  }
+
+  ionViewDidLeave(){
+   this.events.unsubscribe('gotrequests');
   }
 
 }

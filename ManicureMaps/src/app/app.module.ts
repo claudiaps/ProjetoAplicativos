@@ -39,6 +39,7 @@ import { PasswordResetManicurePageModule } from '../pages/manicure/password-rese
 import { ImghendlerProvider } from '../providers/imghendler/imghendler';
 import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicure-login.module';
 import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicure.module';
+import { RequestsProvider } from '../providers/requests/requests';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicur
     AngularFireAuth,
     UserProvider,
     ManicureProvider,
-    ImghendlerProvider
+    ImghendlerProvider,
+    RequestsProvider
   ]
 })
 export class AppModule {}
