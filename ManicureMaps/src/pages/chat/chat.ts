@@ -37,7 +37,7 @@ export class ChatPage {
   accept(item) {
    // console.log('funciona tiozão');
     this.requestservice.acceptrequest(item).then(() => {
-      
+      console.log('voce executa?');
       let newalert = this.alertCtrl.create({
         title: 'Friend added',
         subTitle: 'Tap on the friend to chat with him',

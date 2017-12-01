@@ -60,7 +60,7 @@ export class RequestsProvider {
   }
 
   acceptrequest(buddy) {
-    var promise = new Promise((resolve, reject) => {
+    var promise = new Promise((reject, resolve) => {
       this.firefriends.child(firebase.auth().currentUser.uid).push({
         uid: buddy.uid
       }).then(() => {
@@ -69,9 +69,12 @@ export class RequestsProvider {
         }).then(() => {
           this.deleterequest(buddy).then(() => {
             resolve(true);
-          }).catch((err) => {
+          })
+          .catch((err) => {
+            console.log(err);
             reject(err);
           })
+          
         })
           // .catch((err) => {
           //   reject(err);
