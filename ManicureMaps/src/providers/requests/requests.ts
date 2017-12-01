@@ -1,8 +1,10 @@
+import { UserMainPage } from './../../pages/user/user-main/user-main';
 import { UserProvider } from './../user/user';
 import { connreq } from './../../models/interface/request';
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 import { Events } from 'ionic-angular/util/events';
+import { processRecords } from 'ionic-angular/components/virtual-scroll/virtual-util';
 /*
   Generated class for the RequestsProvider provider.
 
@@ -12,6 +14,7 @@ import { Events } from 'ionic-angular/util/events';
 @Injectable()
 export class RequestsProvider {
   firereq = firebase.database().ref('/requests');
+  firefriends = firebase.database().ref('/friends');
   userdetails;
   constructor(public userservice: UserProvider, public events: Events) {
 
@@ -20,16 +23,16 @@ export class RequestsProvider {
   sendrequest(req: connreq) {
     var promise = new Promise((resolve, reject) => {
       this.firereq.child(req.recipient).push({
-      sender: req.sender
+        sender: req.sender
       }).then(() => {
         resolve({ success: true });
-        })
-    //     .catch((err) => {
-    //       resolve(err);
-    // })
-    console.log('você esta enviando?');
+      })
+      //     .catch((err) => {
+      //       resolve(err);
+      // })
+      console.log('você esta enviando?');
     })
-    return promise;  
+    return promise;
   }
 
   getmyrequests() {
@@ -53,7 +56,49 @@ export class RequestsProvider {
         this.events.publish('gotrequests');
       })
 
-  })
-  } 
+    })
+  }
+
+  acceptrequest(buddy) {
+    var promise = new Promise((resolve, reject) => {
+      this.firefriends.child(firebase.auth().currentUser.uid).push({
+        uid: buddy.uid
+      }).then(() => {
+        this.firefriends.child(buddy.uid).push({
+          uid: firebase.auth().currentUser.uid
+        }).then(() => {
+          this.deleterequest(buddy).then(() => {
+            resolve(true);
+          }).catch((err) => {
+            reject(err);
+          })
+        })
+          // .catch((err) => {
+          //   reject(err);
+          // })
+      })
+        // .catch((err) => {
+        //   reject(err);
+        // })
+    })
+    return promise;
+  }
+
+  deleterequest(buddy) {
+    var promise = new Promise((reject, resolve) => {
+      this.firereq.child(firebase.auth().currentUser.uid).orderByChild('sender').equalTo(buddy.uid).once('value', (snapshot) => {
+        let tempstore = snapshot.val();
+        let somekey = Object.keys(tempstore);
+        this.firereq.child(firebase.auth().currentUser.uid).child(somekey[0]).remove().then(() => {
+          resolve(true);
+        }).catch((err) => {
+          reject(err);
+        })
+      }).catch((err) => {
+        reject(err);
+      })
+    })
+    return promise;
+  }
 
 }

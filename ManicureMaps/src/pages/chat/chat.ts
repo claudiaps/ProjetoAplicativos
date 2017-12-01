@@ -1,6 +1,6 @@
 import { RequestsProvider } from './../../providers/requests/requests';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events, AlertController } from 'ionic-angular';
 
 
 /**
@@ -18,7 +18,7 @@ import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 export class ChatPage {
   myrequests;
   constructor(public navCtrl: NavController, public navParams: NavParams, public requestservice: RequestsProvider,
-              public events: Events) {
+              public events: Events, public alertCtrl: AlertController) {
   }
 
   ionViewWillEnter() {
@@ -32,6 +32,28 @@ export class ChatPage {
 
   ionViewDidLeave(){
    this.events.unsubscribe('gotrequests');
+  }
+
+  accept(item) {
+   // console.log('funciona tiozão');
+    this.requestservice.acceptrequest(item).then(() => {
+      
+      let newalert = this.alertCtrl.create({
+        title: 'Friend added',
+        subTitle: 'Tap on the friend to chat with him',
+        buttons: ['Okay']
+      });
+      newalert.present();
+    })
+  }
+
+
+  ignore(item) {
+    this.requestservice.deleterequest(item).then(() => {
+
+    }).catch((err) => {
+      alert(err);
+    }) 
   }
 
 }
