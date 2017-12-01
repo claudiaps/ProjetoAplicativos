@@ -1,6 +1,7 @@
 import { RequestsProvider } from './../../providers/requests/requests';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events, AlertController } from 'ionic-angular';
+//import { ChatProvider } from './../../providers/chat/chat';
 
 
 /**
@@ -17,25 +18,35 @@ import { IonicPage, NavController, NavParams, Events, AlertController } from 'io
 })
 export class ChatPage {
   myrequests;
+  myfriends;
   constructor(public navCtrl: NavController, public navParams: NavParams, public requestservice: RequestsProvider,
               public events: Events, public alertCtrl: AlertController) {
   }
 
   ionViewWillEnter() {
     this.requestservice.getmyrequests();
+    this.requestservice.getmyfriends();
+  
     this.events.subscribe('gotrequests', () => {
       this.myrequests = [];
       this.myrequests = this.requestservice.userdetails;
+    })
+    this.events.subscribe('friends', () => {
+      this.myfriends = [];
+      this.myfriends = this.requestservice.myfriends;
+      console.log('funciona tiozão');
+
     })
     
   }
 
   ionViewDidLeave(){
    this.events.unsubscribe('gotrequests');
+   this.events.unsubscribe('friends');
+   
   }
 
   accept(item) {
-   // console.log('funciona tiozão');
     this.requestservice.acceptrequest(item).then(() => {
       console.log('voce executa?');
       let newalert = this.alertCtrl.create({
@@ -54,6 +65,9 @@ export class ChatPage {
     }).catch((err) => {
       alert(err);
     }) 
+  }
+
+  buddychat(item){
   }
 
 }

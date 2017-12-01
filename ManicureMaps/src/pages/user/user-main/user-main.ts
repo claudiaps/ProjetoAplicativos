@@ -16,7 +16,7 @@ import { IonicPage,} from 'ionic-angular';
 export class UserMainPage {
   tab1: string = "UserProfilePage";
   tab2: string = "UserManicurePage";
-  tab3: string = "ChatPage";
+  tab3: string = "ChatUserPage";
 }
 
 

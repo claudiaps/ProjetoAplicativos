@@ -41,6 +41,7 @@ import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicu
 import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicure.module';
 import { RequestsProvider } from '../providers/requests/requests';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -91,7 +92,8 @@ import { RequestsProvider } from '../providers/requests/requests';
     UserProvider,
     ManicureProvider,
     ImghendlerProvider,
-    RequestsProvider
+    RequestsProvider,
+
   ]
 })
 export class AppModule {}
