@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 import { Events } from 'ionic-angular/util/events';
 import { processRecords } from 'ionic-angular/components/virtual-scroll/virtual-util';
+import { ManicureProvider } from '../user/manicure';
+
+
 /*
   Generated class for the RequestsProvider provider.
 
@@ -17,7 +20,8 @@ export class RequestsProvider {
   firefriends = firebase.database().ref('/friends');
   userdetails;
   myfriends;
-  constructor(public userservice: UserProvider, public events: Events) {
+  constructor(public userservice: UserProvider, public events: Events,
+  public manicureservice: ManicureProvider) {
 
   }
 
@@ -128,6 +132,31 @@ export class RequestsProvider {
     
     })
   }  
+
+  getmymanicures() {
+    let friendsuid = [];
+    this.firefriends.child(firebase.auth().currentUser.uid).on('value', (snapshot) => {
+      let allfriends = snapshot.val();
+      this.myfriends = [];
+      for (var i in allfriends)
+        friendsuid.push(allfriends[i].uid);
+        
+      this.manicureservice.getallusers().then((users) => {
+        this.myfriends = [];
+        for (var j in friendsuid)
+          for (var key in users) {
+            if (friendsuid[j] === users[key].uid) {
+              this.myfriends.push(users[key]);
+            }
+          }
+        this.events.publish('friends');
+      }).catch((err) => {
+        alert(err);
+      })
+    
+    })
+  }  
+
 
 
 }

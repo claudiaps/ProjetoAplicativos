@@ -1,7 +1,7 @@
+import { ChatsProvider } from './../../../providers/chats/chats';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events, AlertController } from 'ionic-angular';
 import { RequestsProvider } from './../../../providers/requests/requests';
-//import { ChatProvider } from './../../../providers/chat/chat';
 
 /**
  * Generated class for the ChatUserPage page.
@@ -16,15 +16,30 @@ import { RequestsProvider } from './../../../providers/requests/requests';
   templateUrl: 'chat-user.html',
 })
 export class ChatUserPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  myfriends;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public requestservice: RequestsProvider, public events: Events, public alertCtrl: AlertController,
+  public chatservice: ChatsProvider) {
   }
 
   ionViewWillEnter() {
+    this.requestservice.getmymanicures();
 
-
-    }
-    
+    this.events.subscribe('friends', () => {
+      this.myfriends = [];
+      this.myfriends = this.requestservice.myfriends;
+      console.log('funciona tiozão');
+    })
   }
+
+  ionViewDidLeave(){
+    this.events.unsubscribe('friends');
+   }
+
+   buddychat(buddy){
+    this.chatservice.initializebuddy(buddy);
+    this.navCtrl.push('BuddychatPage');
+  }
+}
 
 

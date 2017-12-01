@@ -40,6 +40,7 @@ import { ImghendlerProvider } from '../providers/imghendler/imghendler';
 import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicure-login.module';
 import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicure.module';
 import { RequestsProvider } from '../providers/requests/requests';
+import { ChatsProvider } from '../providers/chats/chats';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { RequestsProvider } from '../providers/requests/requests';
     ManicureProvider,
     ImghendlerProvider,
     RequestsProvider,
+    ChatsProvider,
 
   ]
 })
