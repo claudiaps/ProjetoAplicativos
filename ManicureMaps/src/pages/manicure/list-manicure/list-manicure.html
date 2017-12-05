@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ListManicurePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="pinkao">
+    <ion-title>Compromissos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of itens | async"> 
+
+      <ion-item>
+        <h1>{{item.titulo}}</h1>
+        <p>{{item.subtitulo}}</p>
+      </ion-item>
+
+      <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="editItem(item)">
+            <ion-icon name="create"></ion-icon>
+          </button>
+          <button ion-button color="danger" (click)="removeItem(item.key)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="pinkao" (click)="newItem()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

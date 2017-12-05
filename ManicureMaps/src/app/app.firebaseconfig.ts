@@ -1,4 +1,5 @@
 
+
  export var config = {
     apiKey: "AIzaSyAAtiy_S-beQPmLE1275db0TbHm2L4-oaU",
     authDomain: "manicuremaps.firebaseapp.com",

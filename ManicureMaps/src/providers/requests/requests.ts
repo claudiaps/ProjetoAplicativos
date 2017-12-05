@@ -81,9 +81,9 @@ export class RequestsProvider {
           })
           
         })
-          // .catch((err) => {
-          //   reject(err);
-          // })
+        // .catch((err) => {
+        //     reject(err);
+        //   })
       })
         // .catch((err) => {
         //   reject(err);

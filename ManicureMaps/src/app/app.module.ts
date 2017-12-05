@@ -1,15 +1,19 @@
+import { ListManicurePageModule } from './../pages/manicure/list-manicure/list-manicure.module';
+import { ListManicurePage } from './../pages/manicure/list-manicure/list-manicure';
+import { ListPageModule } from './../pages/manicure/list/list.module';
+import { ListPage } from './../pages/manicure/list/list';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+
 //modules
 import { SingupManicurePageModule } from '../pages/manicure/singup-manicure/singup-manicure.module';
 import { ManicureMainPageModule } from '../pages/manicure/manicure-main/manicure-main.module';
 import { UserLoginPageModule } from '../pages/user/user-login/user-login.module';
 import { UserMainPageModule } from '../pages/user/user-main/user-main.module';
-
 
 //pages
 import { HomePage } from '../pages/home/home';
@@ -22,14 +26,12 @@ import { UserMainPage } from '../pages/user/user-main/user-main';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
-
 //components
 import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AuthProvider } from '../providers/auth/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { config } from './app.firebaseconfig';
-
 
 //providers
 import { ManicureProvider } from '../providers/user/manicure';
@@ -41,18 +43,16 @@ import { ManicureLoginPageModule } from '../pages/manicure/manicure-login/manicu
 import { UserManicurePageModule } from '../pages/user/user-manicure/user-manicure.module';
 import { RequestsProvider } from '../providers/requests/requests';
 import { ChatsProvider } from '../providers/chats/chats';
+import { ListProvider } from '../providers/list/list';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    //ManicureLoginPage,
-    //UserLoginPage,
-    //SingupManicurePage,
-    // ManicureMainPage,
-    //SingupUserPage,
-    //UserMainPage,
+    //ListPage
   ],
   
   imports: [ 
@@ -66,7 +66,11 @@ import { ChatsProvider } from '../providers/chats/chats';
     SingupUserPageModule,
     PasswordResetManicurePageModule,
     ManicureLoginPageModule,
-    UserManicurePageModule
+    UserManicurePageModule,
+    ListPageModule,
+    AngularFireDatabaseModule,
+    ListManicurePageModule
+    
   ],
   
   bootstrap: [IonicApp],
@@ -78,7 +82,8 @@ import { ChatsProvider } from '../providers/chats/chats';
     ManicureMainPage,
     SingupManicurePage,
     SingupUserPage,
-    UserMainPage
+    UserMainPage,
+    ListPage
     
   ],
   providers: [
@@ -95,6 +100,7 @@ import { ChatsProvider } from '../providers/chats/chats';
     ImghendlerProvider,
     RequestsProvider,
     ChatsProvider,
+    ListProvider,
 
   ]
 })

@@ -16,7 +16,7 @@ import { IonicPage} from 'ionic-angular';
 export class ManicureMainPage {
 
   tab1: string = "ManicureProfilePage";
-  tab2: string = "CalendarPage";
+  tab2: string = "ListManicurePage";
   tab3: string = "ChatPage";
 
 

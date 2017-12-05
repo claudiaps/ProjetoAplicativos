@@ -31,7 +31,7 @@ export class BuddychatPage {
     this.events.subscribe('newmessage', () => {
       this.allmessages = [];
       this.allmessages = this.chatservice.buddymessages;
-      this.scrollto();
+      // this.scrollto();
     })
   }
 
